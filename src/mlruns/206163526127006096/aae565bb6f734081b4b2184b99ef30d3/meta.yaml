@@ -1,0 +1,14 @@
+artifact_uri: file:///remote/us01sgnfs00211/djana/iris/src/mlruns/206163526127006096/aae565bb6f734081b4b2184b99ef30d3/artifacts
+end_time: 1753772829275
+entry_point_name: ''
+experiment_id: '206163526127006096'
+lifecycle_stage: active
+run_id: aae565bb6f734081b4b2184b99ef30d3
+run_name: LogisticRegression
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753772814244
+status: 3
+tags: []
+user_id: djana

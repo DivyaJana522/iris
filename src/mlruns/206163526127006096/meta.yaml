@@ -1,0 +1,6 @@
+artifact_location: file:///remote/us01sgnfs00211/djana/iris/src/mlruns/206163526127006096
+creation_time: 1753772062300
+experiment_id: '206163526127006096'
+last_update_time: 1753772062300
+lifecycle_stage: active
+name: iris-classification

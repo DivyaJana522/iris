@@ -1,0 +1,3 @@
+# Simple Dockerfile to test if Podman/Docker works
+FROM alpine:latest
+CMD ["echo", "Hello from Podman/Docker!"]

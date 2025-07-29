@@ -1,0 +1,22 @@
+artifact_path: file:///remote/us01sgnfs00211/djana/iris/src/mlruns/206163526127006096/models/m-f35bce190d41468299ffe83c6a17c4df/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.12.3
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.1
+mlflow_version: 3.1.4
+model_id: m-f35bce190d41468299ffe83c6a17c4df
+model_size_bytes: 1000
+model_uuid: m-f35bce190d41468299ffe83c6a17c4df
+prompts: null
+run_id: aae565bb6f734081b4b2184b99ef30d3
+utc_time_created: '2025-07-29 07:06:54.786740'

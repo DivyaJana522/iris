@@ -1,0 +1,14 @@
+artifact_uri: file:///remote/us01sgnfs00211/djana/iris/src/mlruns/206163526127006096/12847554d0574c38937cc29e3c800269/artifacts
+end_time: 1753772921076
+entry_point_name: ''
+experiment_id: '206163526127006096'
+lifecycle_stage: active
+run_id: 12847554d0574c38937cc29e3c800269
+run_name: RandomForest
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753772912447
+status: 3
+tags: []
+user_id: djana
