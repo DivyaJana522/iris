@@ -1,0 +1,10 @@
+artifact_location: file:///remote/us01sgnfs00211/djana/iris/mlruns/203310886732585050/models/m-01dfad138c3e4b5cb62349ae29db95e7/artifacts
+creation_timestamp: 1753790128896
+experiment_id: '203310886732585050'
+last_updated_timestamp: 1753790134524
+model_id: m-01dfad138c3e4b5cb62349ae29db95e7
+model_type: null
+name: model
+source_run_id: 8648eed7caa84853a1e1df5e23350fb5
+status: 2
+status_message: null

@@ -1,3 +1,4 @@
+artifact_path: file:///remote/us01sgnfs00211/djana/iris/mlruns/203310886732585050/models/m-7f65ae17b11e4194b6e6233ff11b15bc/artifacts
 flavors:
   python_function:
     env:
@@ -13,8 +14,9 @@ flavors:
     serialization_format: cloudpickle
     sklearn_version: 1.7.1
 mlflow_version: 3.1.4
-model_id: null
+model_id: m-7f65ae17b11e4194b6e6233ff11b15bc
 model_size_bytes: 1000
-model_uuid: 9580adf8bdbf451ab7d81c4f628a3a78
+model_uuid: m-7f65ae17b11e4194b6e6233ff11b15bc
 prompts: null
-utc_time_created: '2025-07-29 11:55:35.136703'
+run_id: 72824f3342fb4f99af0c28b68c843647
+utc_time_created: '2025-07-29 11:55:14.109992'
