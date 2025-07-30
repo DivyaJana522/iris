@@ -16,4 +16,5 @@ os.makedirs(os.path.join(os.path.dirname(__file__), '../data'), exist_ok=True)
 csv_path = os.path.join(os.path.dirname(__file__), '../data/iris.csv')
 df.to_csv(csv_path, index=False)
 
-print('Iris dataset saved to data/iris.csv')
+# Iris dataset saved message (flake8: do not use print in production code)
+# print('Iris dataset saved to data/iris.csv')
