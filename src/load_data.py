@@ -1,6 +1,5 @@
 
 import os
-import pandas as pd
 from sklearn.datasets import load_iris
 
 # Load Iris dataset

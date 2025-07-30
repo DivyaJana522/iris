@@ -4,6 +4,8 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import mlflow.sklearn
 import logging
+import numpy as np
+from typing import List
 
 
 # Set up logging
@@ -13,14 +15,18 @@ logging.basicConfig(
     format='%(asctime)s %(levelname)s %(message)s'
 )
 
+
 app = FastAPI()
+
 
 # Load the best model
 model_path = os.path.join(os.path.dirname(__file__), '../models/best_model')
 model = mlflow.sklearn.load_model(model_path)
 
+
 class PredictRequest(BaseModel):
     inputs: List[List[float]]
+
 
 class PredictResponse(BaseModel):
     predictions: List[int]
