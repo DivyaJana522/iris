@@ -1,6 +1,6 @@
 
 import os
-from fastapi import FastAPI, HTTPException, BackgroundTasks
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import mlflow.sklearn
 import joblib
@@ -46,8 +46,6 @@ model = load_model()
 
 from pydantic import validator
 
-from pydantic import validator
-
 class PredictRequest(BaseModel):
     inputs: List[List[float]]
 
@@ -55,14 +53,6 @@ class PredictRequest(BaseModel):
     def check_inputs(cls, v):
         if not v:
             raise ValueError('Input list cannot be empty.')
-        for row in v:
-            if len(row) != 4:
-                raise ValueError('Each input must have exactly 4 features.')
-            if not all(isinstance(x, (int, float)) for x in row):
-                raise ValueError('All features must be numeric.')
-        return v
-    @validator('inputs')
-    def check_inputs_shape_and_type(cls, v):
         if not isinstance(v, list):
             raise ValueError('Inputs must be a list of lists')
         for row in v:
@@ -71,17 +61,6 @@ class PredictRequest(BaseModel):
             for val in row:
                 if not isinstance(val, (float, int)):
                     raise ValueError('All input values must be float or int')
-        return v
-
-    @validator('inputs')
-    def check_inputs(cls, v):
-        if not v:
-            raise ValueError('Input list cannot be empty.')
-        for row in v:
-            if len(row) != 4:
-                raise ValueError('Each input must have exactly 4 features.')
-            if not all(isinstance(x, (int, float)) for x in row):
-                raise ValueError('All features must be numeric.')
         return v
 
 class PredictResponse(BaseModel):
