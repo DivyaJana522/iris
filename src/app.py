@@ -37,7 +37,8 @@ prediction_counter = Counter('prediction_requests_total', 'Total prediction requ
 app = FastAPI()
 
 
-def load_model():
+
+def load_model():  # noqa: E305
     model_path = os.path.join(os.path.dirname(__file__), '../models/best_model')
     return mlflow.sklearn.load_model(model_path)
 
@@ -64,7 +65,7 @@ class PredictRequest(BaseModel):
         return v
 
 
-
+# noqa: E303
 class PredictResponse(BaseModel):
     predictions: List[int]
 
