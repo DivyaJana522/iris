@@ -7,9 +7,7 @@ import logging
 import numpy as np
 from typing import List
 import sqlite3
-
-
-
+ 
 # Ensure logs directory exists
 log_dir = os.path.join(os.path.dirname(__file__), '../logs')
 os.makedirs(log_dir, exist_ok=True)
@@ -47,7 +45,6 @@ class PredictRequest(BaseModel):
 
 class PredictResponse(BaseModel):
     predictions: List[int]
-
 
 
 @app.post('/predict', response_model=PredictResponse)
