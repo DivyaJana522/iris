@@ -7,7 +7,6 @@ import logging
 import numpy as np
 from typing import List
 import sqlite3
- 
 # Ensure logs directory exists
 log_dir = os.path.join(os.path.dirname(__file__), '../logs')
 os.makedirs(log_dir, exist_ok=True)
@@ -30,23 +29,16 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS logs (
 )''')
 conn.commit()
 
-
 app = FastAPI()
-
 
 # Load the best model
 model_path = os.path.join(os.path.dirname(__file__), '../models/best_model')
 model = mlflow.sklearn.load_model(model_path)
 
-
 class PredictRequest(BaseModel):
     inputs: List[List[float]]
-
-
 class PredictResponse(BaseModel):
     predictions: List[int]
-
-
 @app.post('/predict', response_model=PredictResponse)
 async def predict(request: PredictRequest):
     if not request.inputs:
