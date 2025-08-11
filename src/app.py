@@ -40,8 +40,9 @@ class PredictRequest(BaseModel):
     inputs: List[List[float]]
 
 class PredictResponse(BaseModel):
-
     predictions: List[int]
+
+
 @app.post('/predict', response_model=PredictResponse)
 async def predict(request: PredictRequest):
     if not request.inputs:
@@ -56,6 +57,8 @@ async def predict(request: PredictRequest):
     return PredictResponse(predictions=preds.tolist())
 
 # Optional metrics endpoint
+ 
+
 @app.get('/metrics')
 def metrics():
     cursor.execute("SELECT COUNT(*) FROM logs")
