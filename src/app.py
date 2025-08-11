@@ -118,22 +118,10 @@ def metrics():
     return {"prediction_requests": count}
 
 # Prometheus endpoint
+
 @app.get('/prometheus')
 def prometheus_metrics():
     return Response(generate_latest(), media_type=CONTENT_TYPE_LATEST)
-@app.get('/metrics')
-def metrics():
-    cursor.execute("SELECT COUNT(*) FROM logs")
-    count = cursor.fetchone()[0]
-    return {"prediction_requests": count}
-
- 
-
-@app.get('/metrics')
-def metrics():
-    cursor.execute("SELECT COUNT(*) FROM logs")
-    count = cursor.fetchone()[0]
-    return {"prediction_requests": count}
 
 
 # To run: uvicorn app:app --host 0.0.0.0 --port 5000
