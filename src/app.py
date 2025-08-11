@@ -43,8 +43,8 @@ def load_model():
 
 model = load_model()
 
-
 from pydantic import validator
+
 
 class PredictRequest(BaseModel):
     inputs: List[List[float]]
@@ -62,6 +62,8 @@ class PredictRequest(BaseModel):
                 if not isinstance(val, (float, int)):
                     raise ValueError('All input values must be float or int')
         return v
+
+
 
 class PredictResponse(BaseModel):
     predictions: List[int]
@@ -87,9 +89,7 @@ async def predict(request: PredictRequest):
     conn.commit()
     return PredictResponse(predictions=preds.tolist())
 
-
-
-# Optional metrics endpoint
+# Metrics endpoint
 @app.get('/metrics')
 def metrics():
     cursor.execute("SELECT COUNT(*) FROM logs")
@@ -97,10 +97,6 @@ def metrics():
     return {"prediction_requests": count}
 
 # Prometheus endpoint
-
 @app.get('/prometheus')
 def prometheus_metrics():
     return Response(generate_latest(), media_type=CONTENT_TYPE_LATEST)
-
-
-# To run: uvicorn app:app --host 0.0.0.0 --port 5000
