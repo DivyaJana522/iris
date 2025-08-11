@@ -1,6 +1,6 @@
 
 import os
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import mlflow.sklearn
 import logging
