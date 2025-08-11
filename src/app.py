@@ -35,9 +35,12 @@ app = FastAPI()
 model_path = os.path.join(os.path.dirname(__file__), '../models/best_model')
 model = mlflow.sklearn.load_model(model_path)
 
+
 class PredictRequest(BaseModel):
     inputs: List[List[float]]
+
 class PredictResponse(BaseModel):
+
     predictions: List[int]
 @app.post('/predict', response_model=PredictResponse)
 async def predict(request: PredictRequest):
@@ -58,5 +61,6 @@ def metrics():
     cursor.execute("SELECT COUNT(*) FROM logs")
     count = cursor.fetchone()[0]
     return {"prediction_requests": count}
+
 
 # To run: uvicorn app:app --host 0.0.0.0 --port 5000
