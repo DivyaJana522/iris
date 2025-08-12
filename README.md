@@ -1,5 +1,39 @@
 
-# Iris ML Project: End-to-End MLOps Demo
+# Iris ML Project: End-to-End MLOps project
+
+## Contributors : Group 20
+
+| Name                   | ID          |
+|------------------------|-------------|
+| Divya Jana             | 2023ad05069 |
+| KAMUTAM SRIDHARRAJ     | 2023AC05117 |
+| TELUKUNTLA PRIYANKA    | 2023AC05185 |
+| SRINIVASAN SUNDAR RAJ  | 2022ac05245 |
+
+
+## Architecture Overview
+
+This project demonstrates a complete MLOps workflow for the Iris dataset:
+- Data is loaded and preprocessed, then used to train and track models with MLflow.
+- The best model is served via a FastAPI application, which exposes endpoints for prediction, retraining, and metrics.
+- All prediction requests and results are logged to SQLite and log files.
+- Prometheus scrapes metrics from the FastAPI `/prometheus` endpoint for monitoring.
+- A Streamlit dashboard visualizes API metrics and model information in real time.
+
+## Key Technologies
+
+
+This project uses the following technologies:
+
+- **Git + GitHub**: Version control and collaboration
+- **MLflow**: Experiment tracking and model registry
+- **Docker**: Containerization for reproducible environments
+- **FastAPI**: API serving 
+- **GitHub Actions**: CI/CD automation
+- **Logging module & Pydantic**: logging of requests and predictions, with input validation
+- **Prometheus & Streamlite** : Monitoring and visualization
+
+
 
 ## Part 1: Repository and Data Versioning
 1. **Clone the repository:**
